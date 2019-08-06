@@ -10,9 +10,13 @@ document.querySelector('#container').style.backgroundColor = 'pink';
 
 
 // 3. Select all of the list items with a class of "second".
-let listItemsSecond = document.querySelectorAll('#container .second');
+let listItemsSecond = document.querySelectorAll('li.second');
 [...listItemsSecond].map(item => item.style.fontWeight = 'bold');
-// but not specific to li items, could be any element with class of second
+//the . (dot) targets all li elements with the class of 'second'
+//li .second (with space) would target all elements with the class 'second' that are inside li elements
+
+
+
 
 
 // 4. Select a list item with a class of third, but only the list item inside of the ol tag.
@@ -20,8 +24,8 @@ document.querySelector('ol .third').style.fontSize = '2em';
 
 
 // 5. Give the section with an id of container the text "Hello!".
-// let container = document.getElementById('container');
-// container.textContent = 'Hello!';
+let container = document.getElementById('container');
+container.innerHTML = 'Hello!' + container.innerHTML;
 
 
 // 6. Add the class main to the div with a class of footer
@@ -51,6 +55,10 @@ unorderedList.appendChild(newLi);
 // 11. Loop over all of the lis inside the ol tag and give them a background color of "green".
 let orderedList = document.querySelectorAll('ol');
 [...orderedList].map(item => item.style.backgroundColor = 'green');
+
+let orderedList2 = document.querySelector('ol');
+let newLiCopy = newLi.cloneNode('true');
+orderedList2.appendChild(newLiCopy);
 
 
 // 12. Remove the div with a class of footer.
